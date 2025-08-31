@@ -33,3 +33,12 @@ Start Shell inside app container
 docker compose exec -it app bash
 ```
 
+Creating a migration:
+```
+docker compose exec app migrate create -ext sql -dir db/migration seq create_users_table
+```
+
+Migrating:
+```
+docker compose exec app migrate -path db/migration -database="postgresql://postgres:password@db:5432/postgres?sslmode=disable" --verbose up
+```
