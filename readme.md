@@ -42,3 +42,9 @@ Migrating:
 ```
 docker compose exec app migrate -path db/migration -database="postgresql://postgres:password@db:5432/postgres?sslmode=disable" --verbose up
 ```
+
+Generate orm code with sqlc:
+
+```
+docker compose exec app sqlc generate
+```

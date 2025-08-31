@@ -21,6 +21,10 @@ RUN go install github.com/air-verse/air@latest && \
     chmod +x /usr/local/bin/migrate && \
     rm migrate.tar.gz
 
+# Install sqlc
+
+RUN go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+
 # Set working directory
 WORKDIR /app
 
