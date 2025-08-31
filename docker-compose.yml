@@ -17,11 +17,14 @@ services:
     environment:
       - GO111MODULE=on
       - CGO_ENABLED=0
+      - DATABASE_URL=postgresql://postgres:password@db:5431/postgres?sslmode=disable
 
   db:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: example
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
     ports:
       - 5432:5432
 
